@@ -1,0 +1,75 @@
+{
+  "build": {
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "mshx-v2-beta-ui",
+    "version": "2.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "dialog": {
+        "all": true,
+        "ask": true,
+        "confirm": true,
+        "message": true,
+        "open": true,
+        "save": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["http://0.0.0.0:58280/*", "http://127.0.0.1:58280/*"]
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "window": {
+        "hide": true,
+        "show": true,
+        "setClosable": true,
+        "close": true,
+        "create": true
+      },
+      "fs": {
+        "all": true,
+        "scope": ["**", "**/*", "/**/*"]
+      }
+    },
+    "windows": [
+      {
+        "title": "mushyhax² [beta]",
+        "width": 800,
+        "height": 400,
+        "label": "main"
+      },
+      {
+        "label": "output",
+        "title": "mushyhax² [beta] - Output",
+        "url": "output.html",
+        "visible": false,
+        "width": 400,
+        "height": 500
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.wya.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    }
+  }
+}

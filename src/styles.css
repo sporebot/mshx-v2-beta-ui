@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    /* make sure main-bg is hex */
+    --main-bg: #161616;
+    --topbar-bg: #202020;
+    --border-col: #2b2b2b;
+    --text-col: #acacac;
+    --text-col-secondary: rgb(147, 147, 147);
+    --bottombar-bg: #111111;
+
+    --exec-button-col: invert(42%) sepia(4%) saturate(3118%) hue-rotate(80deg) brightness(105%) contrast(88%);
+    --exec-button-col-secondary: #547f5d;
+
+    --unselected-tab-col: var(--topbar-bg);
+    --selected-tab-col: var(--main-bg);
+
+    --warning-col: #c8903c;
+    --warning-col-filter: brightness(0) saturate(100%) invert(60%) sepia(55%) saturate(465%) hue-rotate(357deg) brightness(88%) contrast(96%);
+
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+
+    color: var(--text-col);
+    background-color: var(--main-bg);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+p {
+    margin: 0px;
+}
+
+/* div {
+    border-bottom: solid 1px var(--border-col);
+    border-top: solid 1px var(--border-col);
+} */
+
+.vertical-separator {
+    width: 1px;
+    background: var(--border-col);
+}
+
+.topbar {
+    height: 35px;
+    background-color: var(--topbar-bg);
+    display: flex;
+    border-bottom: solid 1px var(--border-col);
+    border-top: solid 1px var(--border-col);
+}
+
+.topbar-button-holder{
+    display: flex;
+}
+
+.run-button {
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: transparent;
+    border-radius: 5px;
+    aspect-ratio: 1;
+    height: calc(100% - 8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.run-button-img {
+    margin: 0px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    filter: var(--exec-button-col);
+}
+
+.run-button:hover {
+    border: solid 1px var(--exec-button-col-secondary);
+}
+
+.run-button:active {
+    border: solid 2px var(--exec-button-col-secondary);
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    width: 32px;
+    filter: invert(50%);
+}
+
+.tab-button:hover {
+    filter: invert(60%);
+}
+
+.tab-button:active {
+    filter: invert(30%);
+}
+
+.tab-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 0px 0px;
+    border: solid 1px var(--border-col);
+    background-color: var(--main-bg);
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 10px;
+    height: 16px;
+    border-bottom: none;
+    border-top: none;
+    background-color: var(--unselected-tab-col);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tab.tab-active {
+    background-color: var(--selected-tab-col);
+}
+
+.tab:first-child {
+    padding-left: 12px;
+}
+
+.tab:last-child {
+    padding-right: 12px;
+}
+
+.tab-x-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    margin-left: 10px;
+    background: transparent;
+    border: none;
+    filter: invert(45%);
+    margin-top: 0px;
+}
+
+.tab-x-button:hover {
+    filter: invert(55%);
+}
+
+.tab-x-button:active {
+    filter: invert(35%);
+}
+
+.context-menu {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: calc(100% - 136px);
+    width: 130px;
+    height: 35px;
+    background-color: var(--topbar-bg);
+    border: none;
+    padding-right: 3px;
+    padding-left: 3px;
+    border-left: solid 1px var(--border-col);
+    z-index: 10;
+}
+
+/* why did the text stuff get cleared */
+.context-button {
+    border: none;
+    background-color: var(--selected-tab-col);
+    color: var(--text-col);
+    border: solid 1px var(--unselected-tab-col);
+    border-radius: 6px;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.context-button:hover {
+    color: var(--text-col-secondary);
+}
+
+.context-button:active {
+    color: var(--text-col);
+}
+
+.tab-button-img {
+    width: 90%;
+}
+
+.tab-x-button-img {
+    width: 16px;
+}
+
+.monaco-container {
+    position: absolute;
+    top: 37px; /*  account for topbar + 1px border */
+    left: 5px;
+    height: calc(100% - 72px);
+    width: calc(100% - 5px);
+}
+
+.bottom-bar {
+    position: absolute;
+    top: calc(100% - 36px);
+    height: 35px;
+    width: 100%;
+    background-color: var(--bottombar-bg);
+    border-top: solid 1px var(--border-col);
+    display: flex;
+}
+
+.output-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    width: 32px;
+    filter: invert(48%);
+    margin-right: 5px;
+}
+
+.output-button-img {
+    width: 20px;
+}
+
+.output-button:hover {
+    filter: invert(60%);
+}
+
+.output-button:active {
+    filter: invert(35%);
+}
+
+.output-warnings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.output-warnings span {
+    margin-bottom: 1px;
+    font-size: 12px;
+    font-family: "Fira Code", Consolas;
+    color: var(--warning-col);
+    margin-right: 10px;
+}
+
+.output-warning-img {
+    /* pixel perfection */
+    margin-bottom: 1px;
+    width: 18px;
+    margin-right: 5px;
+    filter: var(--warning-col-filter);
+}
+
+.output-prints {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: invert(50%);
+}
+
+.output-prints span {
+    margin-bottom: 1px;
+    font-size: 12px;
+    font-family: "Fira Code", Consolas;
+    margin-right: 5px;
+}
+
+.output-print-img {
+    /* pixel perfection */
+    margin-bottom: 1px;
+    width: 18px;
+    margin-right: 5px;
+}
+
+.output-body {
+    padding: 10px;
+    max-height: calc(100% - 100px);
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
+    font-weight: 600;
+}
+
+.output-body span span {
+    font-weight: 700;
+    font-family: "Fira Code", Consolas;
+}
+
+.clear-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    width: 32px;
+    filter: invert(48%);
+    margin-right: 5px;
+}
+
+.clear-button-img {
+    width: 20px;
+}
+
+.clear-button:hover {
+    filter: invert(60%);
+}
+
+.clear-button:active {
+    filter: invert(35%);
+}
+
+ /* width */
+ ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--bottombar-bg);
+    border-left: solid 1px var(--border-col);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--topbar-bg);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--border-col);
+  } 

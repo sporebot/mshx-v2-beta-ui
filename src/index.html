@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.min.css">
+    <title>mushyhax</title>
+    <script type="module" src="/main.js" defer></script>
+    <script type="module" src="/editor.js" defer></script>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="topbar-button-holder">
+            <button class="run-button"><img src="assets/player-play.svg" alt="run-button-img" class="run-button-img"/></button>
+            <div class="vertical-separator"></div>
+            <button class="tab-button" id="tab-button-new">
+                <img src="assets/file-plus.svg" class="tab-button-img"/>
+            </button>
+            <button class="tab-button" id="tab-button-left">
+                <img src="assets/arrow-left.svg" class="tab-button-img"/>
+            </button>
+            <button class="tab-button" id="tab-button-right">
+                <img src="assets/arrow-right.svg" class="tab-button-img"/>
+            </button>
+        </div>
+        <div class="tab-holder">
+            <div class="tab tab-active" id="tab-0">
+                <span>hello world.lua</span>
+                <button class="tab-x-button">
+                    <img src="assets/x.svg" class="tab-x-button-img"/>
+                </button>
+            </div>
+        </div>
+        <div class="context-menu">
+            <button class="context-button" id="save-file">Save As</button>
+            <button class="context-button" id="open-file">Open</button>
+        </div>
+    </div>
+    
+    <div class="monaco-container">
+    </div>
+
+    <div class="bottom-bar">
+        <button class="output-button">
+            <img src="assets/terminal-2.svg" class="output-button-img"/>
+        </button>
+        <div class="output-prints" style="margin-left: auto; margin-right: 5px;">
+            <span>mushyhax on top</span>
+        </div>
+    </div>
+</body>
+
+</html> 

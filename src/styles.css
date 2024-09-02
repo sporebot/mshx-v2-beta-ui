@@ -343,19 +343,19 @@ p {
  ::-webkit-scrollbar {
     width: 10px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
     background: var(--bottombar-bg);
     border-left: solid 1px var(--border-col);
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: var(--topbar-bg);
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: var(--border-col);
-  } 
+  }
